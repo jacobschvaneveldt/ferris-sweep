@@ -17,7 +17,7 @@ enum keycodes {
     OS_CTRL,
     OS_ALT,
     OS_CMD
-};
+    };
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM comboQweEsc[] = { KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM comboQweEnt[] = { KC_COMM, KC_M, COMBO_END};
 
-// gallite
+// gallium
 const uint16_t PROGMEM comboGalEsc[] = { KC_C, KC_M, COMBO_END};
 const uint16_t PROGMEM comboGalEnt[] = { KC_QUOT, KC_P, COMBO_END};
 const uint16_t PROGMEM comboGalScln[] = { KC_QUOT, KC_COLN, COMBO_END};
