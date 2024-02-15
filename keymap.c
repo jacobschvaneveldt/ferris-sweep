@@ -16,7 +16,7 @@ enum keycodes {
     OS_CTRL,
     OS_ALT,
     OS_CMD
-    };
+};
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
@@ -55,14 +55,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_Q,       C(KC_1), C(KC_2), C(KC_3), C(KC_4), C(KC_5),
     KC_BTN4, KC_BTN5, KC_WH_U, KC_WH_D, _______,    KC_DEL,  KC_BSPC, KC_LGUI, KC_LALT, MO(_F_ROW),
                                _______, _______,    _______, _______
-), 
+  ), 
   
  [_F_ROW] = LAYOUT(
     KC_F1, KC_F2,  KC_F3,  KC_F4,  QK_BOOT,            QK_BOOT, _______, _______, _______, _______, 
     KC_F5, KC_F6,  KC_F7,  KC_F8,  DF(_GALLIUM_V2),    _______, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, 
     KC_F9, KC_F10, KC_F11, KC_F12, DF(_QWERTY),        _______, KC_BRMD, KC_BRMU, _______, _______,
                                   _______, _______,    _______, _______
-), 
+  ), 
 };
 
 const uint16_t PROGMEM comboQweEsc[] = { KC_C, KC_V, COMBO_END};
