@@ -4,6 +4,7 @@
 enum ferris_layers {
   _GALLIUM_V2,
   _RECURVA,
+  _SEMIMAKJQ,
   _QWERTY,
   _LOWER,
   _RAISE,
@@ -28,35 +29,42 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_B, KC_L, KC_D, KC_W, KC_V,    KC_J, KC_F, KC_O,    KC_U,    KC_COMM,
     KC_N, KC_R, KC_T, KC_S, KC_G,    KC_Y, KC_H, KC_A,    KC_E,    KC_I,
     KC_X, KC_Q, KC_M, KC_C, KC_Z,    KC_K, KC_P, KC_QUOT, KC_COLN, KC_DOT, 
-                  OS_SHFT, LOWER,    RAISE, KC_SPC
+                  LOWER, KC_LSFT,    KC_SPC, RAISE
   ),
 
   [_RECURVA] = LAYOUT(
     KC_F, KC_R, KC_D, KC_P, KC_V,    KC_Q,   KC_M, KC_U,    KC_O,    KC_Y,
     KC_S, KC_N, KC_T, KC_C, KC_B,    KC_DOT, KC_H, KC_E,    KC_A,    KC_I,
     KC_Z, KC_X, KC_K, KC_G, KC_W,    KC_J,   KC_L, KC_SCLN, KC_QUOT, KC_COMM, 
-                  OS_SHFT, LOWER,    RAISE, KC_SPC
+                  LOWER, KC_LSFT,    KC_SPC, RAISE
+  ),
+
+  [_SEMIMAKJQ] = LAYOUT(
+    KC_F, KC_L, KC_H, KC_V, KC_Z,    KC_QUOT, KC_W, KC_U,    KC_O,   KC_Y,
+    KC_S, KC_R, KC_N, KC_T, KC_K,    KC_C,    KC_D, KC_E,    KC_A,   KC_I,
+    KC_X, KC_J, KC_B, KC_M, KC_Q,    KC_P,    KC_G, KC_COMM, KC_DOT, KC_SCLN, 
+                  LOWER, KC_LSFT,    KC_SPC, RAISE
   ),
 
   [_QWERTY] = LAYOUT(    
     KC_Q, KC_W, KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   KC_P,
     KC_A, KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
     KC_Z, KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, KC_QUOT, 
-                  OS_SHFT, LOWER,    RAISE, KC_SPC
+                  LOWER, KC_LSFT,    KC_SPC, RAISE
   ),
 
   [_LOWER] = LAYOUT(
-    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,   KC_9,    KC_0,
-    OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, S(KC_V),    KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT, KC_ESC,
-    KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY,    KC_DEL,  KC_BSPC, KC_TAB, KC_ENT,  KC_SCLN,  
+    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,   KC_7,    KC_8,   KC_9,    KC_0,
+    OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, S(KC_V),    KC_ESC, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT, 
+    KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY,    KC_DEL, KC_BSPC, KC_TAB, KC_ENT,  KC_SCLN,  
                                _______, _______,    _______, _______
   ),
 
   [_RAISE] = LAYOUT( 
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_TILD,    KC_CIRC, KC_AMPR, KC_QUES, KC_SLSH, KC_ASTR,
-    KC_MINS, KC_LBRC, KC_LCBR, KC_LPRN, KC_PERC,    KC_PIPE, OS_SHFT, OS_CMD,  OS_ALT,  OS_CTRL,
-    KC_UNDS, KC_RBRC, KC_RCBR, KC_RPRN, KC_GRV,     KC_BSLS, KC_EQL,  KC_RABK, KC_LABK, KC_PLUS,
-                                KC_SPC, _______,    _______, _______
+    KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_PERC,    KC_PIPE, OS_SHFT, OS_CMD,  OS_ALT,  OS_CTRL,
+    KC_LBRC, KC_RBRC, KC_UNDS, KC_MINS, KC_GRV,     KC_BSLS, KC_EQL,  KC_RABK, KC_LABK, KC_PLUS,
+                               _______, KC_SPC,     _______, _______
   ),
     
    [_ADJUST] = LAYOUT(
@@ -67,15 +75,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ), 
   
  [_F_ROW] = LAYOUT(
-    KC_F1, KC_F2,  KC_F3,  KC_F4,  DF(_GALLIUM_V2),    _______, _______, _______, _______, QK_BOOT,
-    KC_F5, KC_F6,  KC_F7,  KC_F8,  DF(_QWERTY),        _______, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, 
-    KC_F9, KC_F10, KC_F11, KC_F12, DF(_RECURVA),       _______, KC_BRMD, KC_BRMU, _______, _______,
+    KC_F1, KC_F2,  KC_F3,  KC_F4,  DF(_GALLIUM_V2),    _______,        _______, _______, _______, QK_BOOT,
+    KC_F5, KC_F6,  KC_F7,  KC_F8,  DF(_QWERTY),        _______,        KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, 
+    KC_F9, KC_F10, KC_F11, KC_F12, DF(_RECURVA),       DF(_SEMIMAKJQ), KC_BRMD, KC_BRMU, _______, _______,
                                   _______, _______,    _______, _______
   ), 
 };
 
 const uint16_t PROGMEM comboQweEsc[] = { KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM comboQweEnt[] = { KC_COMM, KC_M, COMBO_END};
+const uint16_t PROGMEM comboQweCBspc[] = { KC_C, KC_X, COMBO_END};
 
 const uint16_t PROGMEM comboRecurvaEsc[] = { KC_K, KC_G, COMBO_END};
 const uint16_t PROGMEM comboRecurvaEnter[] = { KC_L, KC_SCLN, COMBO_END};
@@ -87,9 +96,12 @@ const uint16_t PROGMEM comboGalScln[] = { KC_QUOT, KC_COLN, COMBO_END};
 const uint16_t PROGMEM comboGalComm[] = { KC_DOT, KC_COLN, COMBO_END};
 const uint16_t PROGMEM comboGalCBspc[] = { KC_Q, KC_M, COMBO_END};
 
+const uint16_t PROGMEM comboGalHyper[] = { KC_Q, KC_X, COMBO_END};
+
 combo_t key_combos[] = {
     COMBO(comboQweEsc, KC_ESCAPE),
     COMBO(comboQweEnt, KC_ENTER),
+    COMBO(comboQweCBspc, KC_ENTER),
 
     COMBO(comboRecurvaEsc, KC_ESCAPE),
     COMBO(comboRecurvaEnter, KC_ENTER),
@@ -100,6 +112,7 @@ combo_t key_combos[] = {
     COMBO(comboGalScln, KC_SCLN),
     COMBO(comboGalComm, KC_COMM),
     COMBO(comboGalCBspc, A(KC_BSPC)),
+    COMBO(comboGalHyper, KC_HYPR),
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
