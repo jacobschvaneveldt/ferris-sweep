@@ -29,9 +29,9 @@ enum keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_GALLIUM_V2] = LAYOUT(
-    KC_B, KC_L, KC_D, KC_W, KC_V,    KC_J, KC_F, KC_O,    KC_U,    KC_COMM,
-    KC_N, KC_R, KC_T, KC_S, KC_G,    KC_Y, KC_H, KC_A,    KC_E,    KC_I,
-    KC_X, KC_Q, KC_M, KC_C, KC_Z,    KC_K, KC_P, KC_QUOT, KC_COLN, KC_DOT,
+    KC_B, KC_L, KC_D, KC_W, KC_V,    KC_J, KC_Y, KC_O,    KC_U,    KC_COMM,
+    KC_N, KC_R, KC_T, KC_S, KC_G,    KC_P, KC_H, KC_A,    KC_E,    KC_I,
+    KC_X, KC_Q, KC_M, KC_C, KC_Z,    KC_K, KC_F, KC_QUOT, KC_COLN, KC_DOT,
                   LOWER, OS_SHFT,    KC_SPC, RAISE
     ),
   
@@ -118,7 +118,7 @@ const uint16_t PROGMEM comboRecurvaGBspc[] = { KC_K, KC_X, KC_QUOT, KC_COLN, COM
 
 const uint16_t PROGMEM comboGalGBspc[] = { KC_Q, KC_M, KC_QUOT, KC_COLN, COMBO_END};
 const uint16_t PROGMEM comboGalEsc[] = { KC_C, KC_M, COMBO_END};
-const uint16_t PROGMEM comboGalEnt[] = { KC_QUOT, KC_P, COMBO_END};
+const uint16_t PROGMEM comboGalEnt[] = { KC_QUOT, KC_F, COMBO_END};
 const uint16_t PROGMEM comboGalScln[] = { KC_QUOT, KC_COLN, COMBO_END};
 const uint16_t PROGMEM comboGalComm[] = { KC_DOT, KC_COLN, COMBO_END};
 const uint16_t PROGMEM comboGalCBspc[] = { KC_Q, KC_M, COMBO_END};
